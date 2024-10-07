@@ -1,29 +1,28 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+
+apply plugin: 'maven'
 
 android {
-    compileSdkVersion 28
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion 12
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0.0"
+        minSdkVersion 23
     }
-
-    lintOptions {
+    namespace 'me.samlss.broccoli'
+    lint {
         abortOnError false
     }
+
 }
 
 dependencies {
 }
 
-publish {
-    userOrg = 'samlss'
-    groupId = 'me.samlss'
-    artifactId = 'broccoli'
-    publishVersion = '1.0.0'
-    desc = 'An Android library that shows the placeholder of the view.'
-    website = 'https://github.com/samlss/Broccoli'
-}
+//publish {
+//    userOrg = 'samlss'
+//    groupId = 'me.samlss'
+//    artifactId = 'broccoli'
+//    publishVersion = '1.0.0'
+//    desc = 'An Android library that shows the placeholder of the view.'
+//    website = 'https://github.com/samlss/Broccoli'
+//}
