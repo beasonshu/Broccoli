@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'maven-publish'
 
 android {
     compileSdk 34
@@ -12,16 +12,25 @@ android {
         abortOnError false
     }
 
+    publishing{
+        singleVariant("release"){
+
+        }
+    }
+
 }
 
 dependencies {
 }
-
-//publish {
-//    userOrg = 'samlss'
-//    groupId = 'me.samlss'
-//    artifactId = 'broccoli'
-//    publishVersion = '1.0.0'
-//    desc = 'An Android library that shows the placeholder of the view.'
-//    website = 'https://github.com/samlss/Broccoli'
-//}
+afterEvaluate{
+    publishing{
+        publications{
+            release(MavenPublication){
+                from components.release
+                groupId='com.github.beasonshu'
+                artifactId = 'broccoli'
+                version = '1.0.0'
+            }
+        }
+    }
+}
