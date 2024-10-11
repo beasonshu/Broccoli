@@ -30,19 +30,11 @@ Show the placeholder of view when you are loading something...
 Add it in your module build.gradle at the end of repositories:
   ```java
   dependencies {
-      implementation 'me.samlss:broccoli:1.0.0'
+      implementation 'com.github.beasonshu:Broccoli:1.0.1'
   }
   ```
 
-#### Maven
-```java
-<dependency>
-  <groupId>me.samlss</groupId>
-  <artifactId>broccoli</artifactId>
-  <version>1.0.0</version>
-  <type>pom</type>
-</dependency>
-```
+
 
 ### Sample Usage
 
